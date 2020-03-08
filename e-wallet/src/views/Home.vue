@@ -13,7 +13,7 @@
 
     <div class="card-stack">
       <CardStack 
-        v-bind:allCards="cards" 
+        v-bind:allCards="cards"
       />
     </div>
 
@@ -42,7 +42,8 @@ export default {
   data: () => {
     return {
       card: {},
-      cards: []
+      cards: [],
+      allCards: []
     };
   },
   methods: {
