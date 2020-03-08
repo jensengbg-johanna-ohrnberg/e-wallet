@@ -1,30 +1,30 @@
 <template>
   <div class="cards">
-
     <div class="top-card">
-      <top h1="E-WALLET" h4="ACTIVE CARD"/>
+      <top 
+        h1="E-WALLET" 
+        h4="ACTIVE CARD"
+      />
       <card 
         class="active-card" 
-        v-bind:input="input"
+        v-bind:card="card"
       />
     </div>
 
     <div class="card-stack">
       <CardStack 
-        v-bind:cards="cards" 
-        v-on:activateCard="activateCard"
+        v-bind:allCards="cards" 
       />
     </div>
 
     <div>
-      <button 
-        class="add-new-card-button" 
-        v-on:click="addnewcard"
-      >
+      <button class="add-new-card-button" v-on:click="addnewcard">
         ADD A NEW CARD
       </button>
+      <button class="remove-new-card-button" v-on:click="removenewcard">
+        REMOVE CARD
+      </button>
     </div>
-
   </div>
 </template>
 
@@ -32,7 +32,6 @@
 import top from "../components/Top";
 import card from "../components/Card";
 import CardStack from "../components/CardStack";
-
 export default {
   name: "Cards",
   components: {
@@ -40,59 +39,24 @@ export default {
     card,
     CardStack,
   },
-  props: {
-    card: Array
-  },
   data: () => {
     return {
-      cards: [],
-      activeCard: {},
+      card: {},
+      cards: []
     };
   },
   methods: {
     addnewcard() {
       this.$router.push('/AddCard')
-    },
-    activateCard(index) {
-      this.input = this.cards[index];
     }
   }
 };
 </script>
 
-<style scoped>
-  .cards {
-    position: relative;
-    width: 414px;
-    height: 896px;
-    background: #FFFFFF;
-    border: 2px solid black;
-    margin-left: 38%;
-  }
-
-  .top-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .active-card {
-    position: absolute;
-    width: 382px;
-    height: 241px;
-    left: 16px;
-    top: 138px;
-  }
-
-  .card-stack {
-    display: flex;
-    flex-direction: column;
-    margin-top: 25rem;
-  }
-
+<style>
   .add-new-card-button {
     position: absolute;
-    width: 382px;
+    width: 191px;
     height: 80px;
     left: 16px;
     top: 799px;
@@ -110,5 +74,29 @@ export default {
     text-align: center;
     text-transform: uppercase;
     color: #000000;
+    cursor: pointer;
+  }
+
+  .remove-new-card-button {
+    position: absolute;
+    width: 192px;
+    height: 80px;
+    left: 210px;
+    top: 799px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: 'PT Mono';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    cursor: pointer;
   }
 </style>

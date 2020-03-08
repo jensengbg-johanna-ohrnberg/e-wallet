@@ -1,14 +1,9 @@
 <template>
     <section class="stack">
-        <div class="cards" 
-            v-for="(card, index) in cards" 
-            v-bind:key="index" 
-            v-on:click="activateCard(index)"
-        >
+        <div class="cards" v-for="(card, index) in cards" v-bind:key="index">
             <card 
-                class="card" 
-                v-bind:card="card" 
-                v-on:click="activate"
+              class="card" 
+              v-bind:card="card"
             />
         </div>
     </section>
@@ -16,34 +11,32 @@
 
 <script>
 import card from "../components/Card";
-
 export default {
     name: "Card Stack",
     components: {
-        card
+      card
     },
     props: {
-        cards: Array
-    },
-    methods: {
-        activateCard(index) {
-            this.$emit("activateCard", index);
-        }
+      allCards: Array
     }
-}
+  }
 </script>
 
 <style scoped>
   .stack {
-    height: 24rem;
+    position: absolute;
+    left: 2px;
+    top: 320px;
   }
 
-  .cards:last-child {
+  .cards {
+    height: 5rem;
     overflow: visible;
+    margin-top: -3rem;
+    position: relative;
   }
 
   .card {
     cursor: pointer;
-    height: 2.5rem;
-  }  
+  }
 </style>

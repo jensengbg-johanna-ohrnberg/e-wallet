@@ -1,25 +1,21 @@
 <template>
   <div class="addCards">
-    <Top h1="ADD A NEW BANK CARD" h4="NEW CARD"/>
+    <Top 
+      h1="ADD A NEW BANK CARD" 
+      h4="NEW CARD"
+    />
     <Card 
       v-bind:card="card"
     />
-    <CardForm 
-      v-on:addcard="addcard" 
+    <CardForm
       v-on:update="update"
     />
 
     <div>
-      <button 
-        class="add-card-button" 
-        v-on:click="addcard"
-      >
+      <button class="add-card-button" v-on:click="addcard">
         Add Card
       </button>
-      <button 
-        class="view-cards-button" 
-        v-on:click="viewcards"
-      >
+      <button class="view-cards-button" v-on:click="viewcards">
         VIEW CARDS
       </button>
     </div>
@@ -30,7 +26,6 @@
 import Top from "../components/Top";
 import Card from "../components/Card";
 import CardForm from "../components/CardForm";
-
 export default {
   name: "Add Cards",
   components: {
@@ -48,27 +43,18 @@ export default {
     viewcards() {
       this.$router.push('/')
     },
-    update(input) {
-      this.card = input;
+    update(card) {
+      this.card = card;
     },
     addcard() {
-      this.$emit('update', this.card);
-        this.$router.push(this.input)
+      this.cards.push(this.card);
+      this.$router.push('/')
     }
   }
 }
 </script>
 
 <style scoped>
-  .addCards {
-    position: relative;
-    width: 414px;
-    height: 896px;
-    background: #FFFFFF;
-    border: 1px solid black;
-    margin-left: 38%;
-  }
-
   .add-card-button {
     position: absolute;
     width: 191px;
@@ -88,6 +74,7 @@ export default {
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
+    cursor: pointer;
   }
 
   .view-cards-button {
@@ -109,5 +96,6 @@ export default {
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
+    cursor: pointer;
   }
 </style>

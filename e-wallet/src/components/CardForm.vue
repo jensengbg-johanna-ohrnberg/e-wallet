@@ -1,6 +1,5 @@
 <template>
   <div class="form" v-on:input="update">
-
     <label class="vendor-title" for="vendor">
       Vendor
     </label>
@@ -15,47 +14,22 @@
     <label class="cardnumber-title" for="cardnumber">
       Card Number
     </label>
-    <input
-      class="cardnumber-input"
-      v-model="cardnumber"
-      type="text"
-      name="cardnumber"
-      placeholder="XXXX XXXX XXXX XXXX"
-    />
+    <input class="cardnumber-input" v-model="cardnumber" type="text" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX"/>
 
     <label class="cardholder-title" for="cardholder">
       Cardholder Name
     </label>
-    <input
-      class="cardholder-input"
-      v-model="cardholder"
-      type="text"
-      name="cardholder"
-      placeholder="FIRSTNAME LASTNAME"
-    />
+    <input class="cardholder-input" v-model="cardholder" type="text" name="cardholder" placeholder="FIRSTNAME LASTNAME"/>
 
     <label class="validity-title" for="validity">
       Valid Thru
     </label>
-    <input
-      class="validity-input"
-      v-model="validity"
-      type="text"
-      name="validity"
-      placeholder="MM/YY"
-    />
+    <input class="validity-input" v-model="validity" type="text" name="validity" placeholder="MM/YY"/>
     
-    <label class="ccv-title" for="ccv">
-      CCV
+    <label class="cvc-title" for="cvc">
+      CVC
     </label>
-    <input 
-      class="ccv-input" 
-      v-model="ccv" 
-      type="text" 
-      name="ccv" 
-      placeholder="xxx" 
-    />
-
+    <input class="cvc-input" v-model="cvc" type="text" name="cvc" placeholder="xxx"/>
   </div>
 </template>
 
@@ -67,7 +41,7 @@ export default {
       cardnumber: "",
       cardholder: "",
       validity: "",
-      ccv: ""
+      cvc: ""
     }
   },
   methods: {
@@ -77,11 +51,10 @@ export default {
         cardnumber: this.cardnumber,
         cardholder: this.cardholder,
         validity: this.validity,
-        ccv: this.ccv
+        cvc: this.cvc
       }
       this.$emit("update", input);
-    },
-
+    }
   }
 };
 </script>
@@ -171,7 +144,7 @@ export default {
     border-radius: 8px;
   }
 
-  .ccv-title {
+  .cvc-title {
     position: absolute;
     width: 175px;
     height: 22px;
@@ -188,7 +161,7 @@ export default {
     color: rgba(0, 0, 0, 0.8);
   }
 
-  .ccv-input {
+  .cvc-input {
     position: absolute;
     width: 175px;
     height: 56px;

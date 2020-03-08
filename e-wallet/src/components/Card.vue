@@ -4,17 +4,20 @@
       <img class="chip-img" v-bind:src="require(`../assets/chip-${chip}.svg`)">
       <img class="vendor-img" v-bind:src="require(`../assets/vendor-${vendor}.svg`)">
     </div>
+
     <div>
       <p class="cardnumber"> {{ cardnumber }} </p>
     </div>
-      <div>
-        <p class="cardholder-label">Cardholder Name</p>
-        <p class="cardholder"> {{ cardholder }} </p>
-      </div>
-      <div>
-        <p class="validity-label">Valid Thru</p>
-        <p class="validity"> {{ validity }} </p>
-      </div>
+
+    <div>
+      <p class="cardholder-label">Cardholder Name</p>
+      <p class="cardholder"> {{ cardholder }} </p>
+    </div>
+
+    <div>
+      <p class="validity-label">Valid Thru</p>
+      <p class="validity"> {{ validity }} </p>
+    </div>
   </article>
 </template>
 
@@ -104,24 +107,28 @@ export default {
     background: linear-gradient(237.41deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 99.07%), #FFAE34;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    color: #000000;
   }
 
   .ninja {
     background: linear-gradient(237.75deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%), #222222;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    color: #FFFFFF;
   }
 
   .blockchain {
     background: linear-gradient(238.04deg, rgba(0, 0, 0, 0.15) 1.49%, rgba(0, 0, 0, 0) 100%), #8B58F9;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    color: #000000;
   }
 
   .evil {
     background: linear-gradient(237.75deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%), #F33355;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    color: #FFFFFF;
   }
 
   .dark {

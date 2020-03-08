@@ -34,7 +34,7 @@ export default {
     text-transform: uppercase;
     color: #222222;
   }
-
+  
   .undertitle {
     position: absolute;
     width: 304px;
