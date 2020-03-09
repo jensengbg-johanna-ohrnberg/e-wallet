@@ -39,8 +39,10 @@ export default {
     cardnumber() {
       if (!this.card.cardnumber) {
         return this.defaultNumber;
-      } else {        
-        return this.card.cardnumber;
+      } else {
+        let number = this.card.cardnumber
+        number = number.match(/.{1,4}/g)   
+        return number.join(' ');
       }
     },
     cardholder() {

@@ -14,22 +14,22 @@
     <label class="cardnumber-title" for="cardnumber">
       Card Number
     </label>
-    <input class="cardnumber-input" v-model="cardnumber" type="text" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX"/>
+    <input class="cardnumber-input" v-model="cardnumber" type="text" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="16"/>
 
     <label class="cardholder-title" for="cardholder">
       Cardholder Name
     </label>
-    <input class="cardholder-input" v-model="cardholder" type="text" name="cardholder" placeholder="FIRSTNAME LASTNAME"/>
+    <input class="cardholder-input" v-model="cardholder" type="text" name="cardholder" placeholder="FIRSTNAME LASTNAME" maxlength="30"/>
 
     <label class="validity-title" for="validity">
       Valid Thru
     </label>
-    <input class="validity-input" v-model="validity" type="text" name="validity" placeholder="MM/YY"/>
+    <input class="validity-input" v-model="validity" type="text" name="validity" placeholder="MM/YY" maxlength="5"/>
     
     <label class="cvc-title" for="cvc">
       CVC
     </label>
-    <input class="cvc-input" v-model="cvc" type="text" name="cvc" placeholder="xxx"/>
+    <input class="cvc-input" v-model="cvc" type="text" name="cvc" placeholder="xxx" maxlength="3"/>
   </div>
 </template>
 

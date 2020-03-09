@@ -43,15 +43,27 @@ export default {
     return {
       card: {},
       cards: [],
-      allCards: []
+      allCards: localStorage.getItem('allCards')
     };
   },
   methods: {
     addnewcard() {
       this.$router.push('/AddCard')
     }
+  },
+  watch: {
+    allCards() {
+      this.cards = JSON.parse(localStorage.getItem('cards'))
+    }
+  },
+  mounted () {
+    if (localStorage.getItem('allCards')) {
+      this.cards = JSON.parse(localStorage.getItem('allCards'))
+    } else {
+      localStorage.setItem('allCards', JSON.stringify(this.cards))
+    }
   }
-};
+}
 </script>
 
 <style>

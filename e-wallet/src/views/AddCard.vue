@@ -46,10 +46,17 @@ export default {
     update(card) {
       this.card = card;
     },
-    addcard() {
-      this.cards.push(this.card);
+    addcard () {
+      if (localStorage.getItem('allCards')) {
+        this.cards = JSON.parse(localStorage.getItem('allCards'))
+        this.cards.push(this.card)
+        localStorage.setItem('allCards', JSON.stringify(this.cards))
+      } else {
+        this.cards.push(this.card)
+        localStorage.setItem('allCards', JSON.stringify(this.cards))
+      }
       this.$router.push('/')
-    }
+    },
   }
 }
 </script>
