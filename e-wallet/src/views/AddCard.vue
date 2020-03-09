@@ -43,20 +43,13 @@ export default {
     viewcards() {
       this.$router.push('/')
     },
-    update(card) {
-      this.card = card;
-    },
     addcard () {
-      if (localStorage.getItem('allCards')) {
-        this.cards = JSON.parse(localStorage.getItem('allCards'))
-        this.cards.push(this.card)
-        localStorage.setItem('allCards', JSON.stringify(this.cards))
-      } else {
-        this.cards.push(this.card)
-        localStorage.setItem('allCards', JSON.stringify(this.cards))
-      }
-      this.$router.push('/')
+        this.$emit('card', this.card);
+        this.$router.push("/");
     },
+    update(input) {
+      this.card = input;
+    }
   }
 }
 </script>

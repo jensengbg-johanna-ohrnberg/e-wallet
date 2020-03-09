@@ -1,5 +1,5 @@
 <template>
-  <article class="card" v-bind:class="['card', vendor, chip]">
+  <article class="card" v-on:click="activateCard()" v-bind:class="['card', vendor, chip]">
     <div>
       <img class="chip-img" v-bind:src="require(`../assets/chip-${chip}.svg`)">
       <img class="vendor-img" v-bind:src="require(`../assets/vendor-${vendor}.svg`)">
@@ -76,6 +76,11 @@ export default {
         chip = "light";
         return chip;
       }
+    }
+  },
+  methods: {
+    activateCard() {
+      this.$emit("activateCard", this.card)
     }
   }
 }

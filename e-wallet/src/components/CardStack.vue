@@ -1,9 +1,10 @@
 <template>
     <section class="stack">
-        <div class="cards" v-for="(card, index) in cards" v-bind:key="index">
+        <div class="cards" v-for="(card, index) in allCards" v-bind:key="index">
             <card 
               class="card" 
               v-bind:card="card"
+              @card="activateCard"
             />
         </div>
     </section>
@@ -18,7 +19,13 @@ export default {
     },
     props: {
       allCards: Array
+    },
+    methods: {
+    activateCard(card) {
+      this.$emit('activateCard', card)
     }
+    }
+    
   }
 </script>
 
@@ -32,7 +39,7 @@ export default {
   .cards {
     height: 5rem;
     overflow: visible;
-    margin-top: -3rem;
+    margin-top: -2rem;
     position: relative;
   }
 

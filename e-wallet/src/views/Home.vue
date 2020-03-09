@@ -6,14 +6,16 @@
         h4="ACTIVE CARD"
       />
       <card 
-        class="active-card" 
-        v-bind:card="card"
+        class="active-card"
+        v-on:allCards="activateCard"
+        @cards="card"
       />
     </div>
 
     <div class="card-stack">
       <CardStack 
         v-bind:allCards="cards"
+        @activateCard="activateCard"
       />
     </div>
 
@@ -42,25 +44,17 @@ export default {
   data: () => {
     return {
       card: {},
-      cards: [],
-      allCards: localStorage.getItem('allCards')
     };
+  },
+  props: {
+    cards: Array
   },
   methods: {
     addnewcard() {
       this.$router.push('/AddCard')
-    }
-  },
-  watch: {
-    allCards() {
-      this.cards = JSON.parse(localStorage.getItem('cards'))
-    }
-  },
-  mounted () {
-    if (localStorage.getItem('allCards')) {
-      this.cards = JSON.parse(localStorage.getItem('allCards'))
-    } else {
-      localStorage.setItem('allCards', JSON.stringify(this.cards))
+    },
+    activateCard() {
+      this.card = this.cards.card
     }
   }
 }
