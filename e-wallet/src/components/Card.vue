@@ -29,7 +29,7 @@ export default {
   },
   data: () => {
     return {
-      defaultImg: "",
+      defaultVendor: "",
       defaultNumber: "xxxx xxxx xxxx xxxx",
       defaultHolder: "Firstname Lastname",
       defaultValidity: "MM/YY"
@@ -61,7 +61,7 @@ export default {
     },
     vendor() {
       if (!this.card.vendor) {
-        return this.defaultImg;
+        return this.defaultVendor;
       } else {
         return this.card.vendor;
       }
