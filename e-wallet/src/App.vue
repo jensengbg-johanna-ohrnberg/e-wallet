@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <router-view @card="addCards" :cards="cards" class="e-wallet"/>
   </div>
 </template>

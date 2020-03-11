@@ -1,18 +1,17 @@
 <template>
-  <div class="cards">
-    <div class="top-card">
+  <div>
+    <div>
       <top 
         h1="E-WALLET" 
         h4="ACTIVE CARD"
       />
       <card 
-        class="active-card"
         @allCards="activateCard"
         :card="card"
       />
     </div>
 
-    <div class="card-stack">
+    <div>
       <CardStack 
         v-bind:allCards="cards"
         @activateCard="activateCard"

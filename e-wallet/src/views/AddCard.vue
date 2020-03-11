@@ -1,5 +1,5 @@
 <template>
-  <div class="addCards">
+  <div>
     <Top 
       h1="ADD A NEW BANK CARD" 
       h4="NEW CARD"
@@ -8,7 +8,7 @@
       v-bind:card="card"
     />
     <CardForm
-      v-on:update="update"
+      v-on:updateCard="updateCard"
     />
 
     <div>
@@ -47,7 +47,7 @@ export default {
         this.$emit('card', this.card);
         this.$router.push("/");
     },
-    update(input) {
+    updateCard(input) {
       this.card = input;
     }
   }

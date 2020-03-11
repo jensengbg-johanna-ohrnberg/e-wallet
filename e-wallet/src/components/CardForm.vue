@@ -1,9 +1,9 @@
 <template>
-  <div class="form" v-on:input="update">
+  <div v-on:input="updateCard">
     <label class="vendor-title" for="vendor">
       Vendor
     </label>
-    <select class="vendor-input" v-model="vendor" name="vendor" id="vendor">
+    <select class="vendor-input" v-model="vendor" name="vendor">
       <option disabled>SELECT BANK...</option>
       <option value="bitcoin">Bitcoin</option>
       <option value="ninja">Ninja</option>
@@ -45,7 +45,7 @@ export default {
     }
   },
   methods: {
-    update() {
+    updateCard() {
       const input = {
         vendor: this.vendor,
         cardnumber: this.cardnumber,
@@ -53,7 +53,7 @@ export default {
         validity: this.validity,
         cvc: this.cvc
       }
-      this.$emit("update", input);
+      this.$emit("updateCard", input);
     }
   }
 };
