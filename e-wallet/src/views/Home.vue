@@ -7,8 +7,8 @@
       />
       <card 
         class="active-card"
-        v-on:allCards="activateCard"
-        @cards="card"
+        @allCards="activateCard"
+        :card="card"
       />
     </div>
 
@@ -23,7 +23,7 @@
       <button class="add-new-card-button" v-on:click="addnewcard">
         ADD A NEW CARD
       </button>
-      <button class="remove-new-card-button" v-on:click="removenewcard">
+      <button class="remove-new-card-button">
         REMOVE CARD
       </button>
     </div>
@@ -43,7 +43,7 @@ export default {
   },
   data: () => {
     return {
-      card: {},
+      card: {}
     };
   },
   props: {
@@ -53,14 +53,15 @@ export default {
     addnewcard() {
       this.$router.push('/AddCard')
     },
-    activateCard() {
-      this.card = this.cards.card
+    activateCard(card) {
+      this.card = card
+      console.log(this.card)
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
   .add-new-card-button {
     position: absolute;
     width: 191px;

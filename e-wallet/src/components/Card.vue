@@ -81,6 +81,7 @@ export default {
   methods: {
     activateCard() {
       this.$emit("activateCard", this.card)
+      console.log(this.card)
     }
   }
 }

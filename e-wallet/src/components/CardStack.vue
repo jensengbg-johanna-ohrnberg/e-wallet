@@ -4,7 +4,7 @@
             <card 
               class="card" 
               v-bind:card="card"
-              @card="activateCard"
+              @activateCard="activateCard"
             />
         </div>
     </section>
@@ -13,26 +13,26 @@
 <script>
 import card from "../components/Card";
 export default {
-    name: "Card Stack",
-    components: {
-      card
-    },
-    props: {
-      allCards: Array
-    },
-    methods: {
+  name: "Card Stack",
+  components: {
+    card
+  },
+  props: {
+    allCards: Array
+  },
+  methods: {
     activateCard(card) {
       this.$emit('activateCard', card)
+      console.log(card)
     }
-    }
-    
-  }
+  }  
+}
 </script>
 
 <style scoped>
   .stack {
     position: absolute;
-    left: 2px;
+    left: 5px;
     top: 320px;
   }
 
