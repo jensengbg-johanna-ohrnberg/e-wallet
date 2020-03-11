@@ -23,6 +23,7 @@
       <button class="add-new-card-button" v-on:click="addnewcard">
         ADD A NEW CARD
       </button>
+      <!--Ta bort knappen fungerar ej-->
       <button class="remove-new-card-button">
         REMOVE CARD
       </button>
