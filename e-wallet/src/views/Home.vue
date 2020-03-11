@@ -24,7 +24,7 @@
         ADD A NEW CARD
       </button>
       <!--Ta bort knappen fungerar ej-->
-      <button class="remove-new-card-button">
+      <button class="remove-new-card-button" v-on:click="removenewcard">
         REMOVE CARD
       </button>
     </div>
@@ -57,6 +57,9 @@ export default {
     activateCard(card) {
       this.card = card
       console.log(this.card)
+    },
+    removenewcard() {
+      alert('This button does not work!');
     }
   }
 }
