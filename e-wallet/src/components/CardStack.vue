@@ -13,7 +13,7 @@
 <script>
 import card from "../components/Card";
 export default {
-  name: "Card Stack",
+  name: "CardStack",
   components: {
     card
   },
