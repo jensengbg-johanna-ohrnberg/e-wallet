@@ -27,7 +27,7 @@ import Top from "../components/Top";
 import Card from "../components/Card";
 import CardForm from "../components/CardForm";
 export default {
-  name: "Add Cards",
+  name: "AddCards",
   components: {
     Top,
     Card,
